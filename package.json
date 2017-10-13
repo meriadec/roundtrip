@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "setup": "pm2 deploy ecosystem.json5 production setup",
+    "deploy": "pm2 deploy ecosystem.json5 production"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "pm2": "^2.7.1",
+    "prettier": "^1.7.4"
+  }
+}

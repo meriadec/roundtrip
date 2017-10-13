@@ -1,0 +1,16 @@
+{
+  "apps": [{
+    "name"  : "roundtrip",
+    "script": "src/index.js",
+  }],
+  "deploy": {
+    "production": {
+      "user"       : "pm2",
+      "host"       : "sigsev.io",
+      "ref"        : "origin/master",
+      "repo"       : "git@github.com:meriadec/roundtrip.git",
+      "path"       : "/var/www/roundtrip",
+      "post-deploy": "yarn && pm2 startOrRestart ecosystem.json5 --log-date-format 'DD-MM HH:mm:ss.SSS'",
+    }
+  }
+}
