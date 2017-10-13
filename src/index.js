@@ -15,8 +15,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 const client = new Twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 
 app.post('/message', async function(req, res) {
+  const infos = await getStationsInfos()
+  const txt = infos.map(s => `${s.name}: ${s.bikes} vélos - ${s.stands} places`).join('\n')
   const msg = await client.messages.create({
-    body: 'What?',
+    body: txt,
     to: req.body.From,
     from: process.env.TWILIO_NUMBER,
   })
