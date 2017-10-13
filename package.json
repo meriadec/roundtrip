@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "dotenv": "^4.0.0",
-    "node-fetch": "^1.7.3"
+    "express": "^4.16.2",
+    "node-fetch": "^1.7.3",
+    "twilio": "^3.8.0"
   },
   "devDependencies": {
     "pm2": "^2.7.1",
