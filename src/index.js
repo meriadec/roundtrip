@@ -9,7 +9,7 @@ const { getStationsInfos } = require('./velib')
 const port = process.env.PORT
 const app = express()
 
-const client = new Twilio(process.env.TWILIO_API_KEY, process.env.TWILIO_API_SECRET)
+const client = new Twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 
 app.post('/message', async function(req, res) {
   const msg = await client.messages.create({
